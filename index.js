@@ -1,5 +1,5 @@
 // Fetch Posts
-fetch("http://localhost:3000/posts")
+fetch("http://localhost:5000/posts")
 .then((data)=> data.json() )
 .then((posts)=>{
 
@@ -34,7 +34,7 @@ function displayPosts(posts)
 // edit post
 function editPost(id)
 {
-  fetch(`http://localhost:3000/posts/${id}`)
+  fetch(`http://localhost:5000/posts/${id}`)
   .then((data)=> data.json() )
   .then((post)=>{
      const update_container = document.getElementById("update_container")
@@ -82,7 +82,7 @@ function editPost(id)
  
  
    
-   fetch(`http://localhost:3000/posts/${id}`, {
+   fetch(`http://localhost:5000/posts/${id}`, {
      method: "PATCH",
      headers:{"Content-Type": "application/json"},
      body: JSON.stringify({title: title, img: image, description: description})
@@ -101,7 +101,7 @@ function editPost(id)
 // delete function
 function deletePost(id)
 {
-  fetch(`http://localhost:3000/posts/${id}`, {
+  fetch(`http://localhost:5000/posts/${id}`, {
     method: "DELETE"
   })
   .then((data)=> data.json() )
@@ -123,7 +123,7 @@ document.getElementById("postForm").addEventListener("submit", (event)=>{
 
 
   
-  fetch("http://localhost:3000/posts", {
+  fetch("http://localhost:5000/posts", {
     method: "POST",
     headers:{"Content-Type": "application/json"},
     body: JSON.stringify({title: title, img: image, description: description, views:0})
