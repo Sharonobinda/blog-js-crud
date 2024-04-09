@@ -94,7 +94,6 @@ function editPost(id)
    })
  
  
- 
 
 }
 
@@ -136,9 +135,6 @@ document.getElementById("postForm").addEventListener("submit", (event)=>{
 
 
 })
-
-// -C  R  -U    D
-
 
 
 
